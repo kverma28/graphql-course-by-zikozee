@@ -101,7 +101,7 @@ public class PopulateTable implements CommandLineRunner {
                 .map(department -> {
                     try {
                         return departmentRepository.save(department);
-                    }catch (Exception _) {
+                    }catch (Exception ex) {
                         log.info("department save failed: {}", department.getName());
                         return null;
                     }
@@ -145,7 +145,7 @@ public class PopulateTable implements CommandLineRunner {
                 .map(employee -> {
                     try{
                         return employeeRepository.save(employee);
-                    }catch (Exception _) {
+                    }catch (Exception ex) {
                         log.info("employee save failed: {}", employee.getName());
                         return null;
                     }
